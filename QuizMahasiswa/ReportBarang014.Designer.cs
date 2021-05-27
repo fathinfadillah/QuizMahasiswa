@@ -30,7 +30,7 @@
         {
 			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dt = new System.Windows.Forms.DataGridView();
 			this.btnExcel = new System.Windows.Forms.Button();
 			this.btnPDF = new System.Windows.Forms.Button();
 			this.quizMahasiswaDataSet = new QuizMahasiswa.QuizMahasiswaDataSet();
@@ -41,7 +41,7 @@
 			this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.namasupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dt)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tblbarangBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -57,23 +57,23 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Report Barang";
 			// 
-			// dataGridView1
+			// dt
 			// 
-			this.dataGridView1.AutoGenerateColumns = false;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dt.AutoGenerateColumns = false;
+			this.dt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idbarangDataGridViewTextBoxColumn,
             this.namabarangDataGridViewTextBoxColumn,
             this.hargaDataGridViewTextBoxColumn,
             this.stokDataGridViewTextBoxColumn,
             this.namasupplierDataGridViewTextBoxColumn});
-			this.dataGridView1.DataSource = this.tblbarangBindingSource;
-			this.dataGridView1.Location = new System.Drawing.Point(75, 107);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(544, 279);
-			this.dataGridView1.TabIndex = 1;
+			this.dt.DataSource = this.tblbarangBindingSource;
+			this.dt.Location = new System.Drawing.Point(75, 107);
+			this.dt.Margin = new System.Windows.Forms.Padding(2);
+			this.dt.Name = "dt";
+			this.dt.RowTemplate.Height = 24;
+			this.dt.Size = new System.Drawing.Size(544, 279);
+			this.dt.TabIndex = 1;
 			// 
 			// btnExcel
 			// 
@@ -149,13 +149,13 @@
 			this.ClientSize = new System.Drawing.Size(694, 516);
 			this.Controls.Add(this.btnPDF);
 			this.Controls.Add(this.btnExcel);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.dt);
 			this.Controls.Add(this.label1);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "ReportBarang014";
 			this.Text = "ReportBarabg";
 			this.Load += new System.EventHandler(this.ReportBarang014_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dt)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tblbarangBindingSource)).EndInit();
 			this.ResumeLayout(false);
@@ -166,7 +166,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dt;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnPDF;
 		private QuizMahasiswaDataSet quizMahasiswaDataSet;
