@@ -28,11 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dt = new System.Windows.Forms.DataGridView();
 			this.btnExcel = new System.Windows.Forms.Button();
 			this.btnPDF = new System.Windows.Forms.Button();
+			this.quizMahasiswaDataSet = new QuizMahasiswa.QuizMahasiswaDataSet();
+			this.tblbarangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.tbl_barangTableAdapter = new QuizMahasiswa.QuizMahasiswaDataSetTableAdapters.tbl_barangTableAdapter();
+			this.idbarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.namasupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dt)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tblbarangBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -48,12 +59,20 @@
 			// 
 			// dt
 			// 
+			this.dt.AutoGenerateColumns = false;
 			this.dt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dt.Location = new System.Drawing.Point(56, 107);
+			this.dt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idbarangDataGridViewTextBoxColumn,
+            this.namabarangDataGridViewTextBoxColumn,
+            this.hargaDataGridViewTextBoxColumn,
+            this.stokDataGridViewTextBoxColumn,
+            this.namasupplierDataGridViewTextBoxColumn});
+			this.dt.DataSource = this.tblbarangBindingSource;
+			this.dt.Location = new System.Drawing.Point(75, 107);
 			this.dt.Margin = new System.Windows.Forms.Padding(2);
 			this.dt.Name = "dt";
 			this.dt.RowTemplate.Height = 24;
-			this.dt.Size = new System.Drawing.Size(582, 279);
+			this.dt.Size = new System.Drawing.Size(544, 279);
 			this.dt.TabIndex = 1;
 			// 
 			// btnExcel
@@ -78,6 +97,51 @@
 			this.btnPDF.UseVisualStyleBackColor = true;
 			this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
 			// 
+			// quizMahasiswaDataSet
+			// 
+			this.quizMahasiswaDataSet.DataSetName = "QuizMahasiswaDataSet";
+			this.quizMahasiswaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// tblbarangBindingSource
+			// 
+			this.tblbarangBindingSource.DataMember = "tbl_barang";
+			this.tblbarangBindingSource.DataSource = this.quizMahasiswaDataSet;
+			// 
+			// tbl_barangTableAdapter
+			// 
+			this.tbl_barangTableAdapter.ClearBeforeFill = true;
+			// 
+			// idbarangDataGridViewTextBoxColumn
+			// 
+			this.idbarangDataGridViewTextBoxColumn.DataPropertyName = "id_barang";
+			this.idbarangDataGridViewTextBoxColumn.HeaderText = "id_barang";
+			this.idbarangDataGridViewTextBoxColumn.Name = "idbarangDataGridViewTextBoxColumn";
+			this.idbarangDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// namabarangDataGridViewTextBoxColumn
+			// 
+			this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
+			this.namabarangDataGridViewTextBoxColumn.HeaderText = "nama_barang";
+			this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
+			// 
+			// hargaDataGridViewTextBoxColumn
+			// 
+			this.hargaDataGridViewTextBoxColumn.DataPropertyName = "harga";
+			this.hargaDataGridViewTextBoxColumn.HeaderText = "harga";
+			this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+			// 
+			// stokDataGridViewTextBoxColumn
+			// 
+			this.stokDataGridViewTextBoxColumn.DataPropertyName = "stok";
+			this.stokDataGridViewTextBoxColumn.HeaderText = "stok";
+			this.stokDataGridViewTextBoxColumn.Name = "stokDataGridViewTextBoxColumn";
+			// 
+			// namasupplierDataGridViewTextBoxColumn
+			// 
+			this.namasupplierDataGridViewTextBoxColumn.DataPropertyName = "nama_supplier";
+			this.namasupplierDataGridViewTextBoxColumn.HeaderText = "nama_supplier";
+			this.namasupplierDataGridViewTextBoxColumn.Name = "namasupplierDataGridViewTextBoxColumn";
+			// 
 			// ReportBarang014
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,7 +154,10 @@
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "ReportBarang014";
 			this.Text = "ReportBarabg";
+			this.Load += new System.EventHandler(this.ReportBarang014_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dt)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tblbarangBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -102,5 +169,13 @@
         private System.Windows.Forms.DataGridView dt;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnPDF;
-    }
+		private QuizMahasiswaDataSet quizMahasiswaDataSet;
+		private System.Windows.Forms.BindingSource tblbarangBindingSource;
+		private QuizMahasiswaDataSetTableAdapters.tbl_barangTableAdapter tbl_barangTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn idbarangDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn namabarangDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn stokDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn namasupplierDataGridViewTextBoxColumn;
+	}
 }
