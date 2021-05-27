@@ -39,7 +39,8 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtSupplier = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.cbSupplier = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dt)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -85,10 +86,10 @@
 			// 
 			// txtHarga
 			// 
-			this.txtHarga.Location = new System.Drawing.Point(210, 150);
+			this.txtHarga.Location = new System.Drawing.Point(233, 150);
 			this.txtHarga.Margin = new System.Windows.Forms.Padding(2);
 			this.txtHarga.Name = "txtHarga";
-			this.txtHarga.Size = new System.Drawing.Size(187, 20);
+			this.txtHarga.Size = new System.Drawing.Size(164, 20);
 			this.txtHarga.TabIndex = 2;
 			// 
 			// txtNamaBarang
@@ -150,20 +151,32 @@
 			this.label1.TabIndex = 27;
 			this.label1.Text = "MASTER BARANG";
 			// 
-			// txtSupplier
+			// label2
 			// 
-			this.txtSupplier.Location = new System.Drawing.Point(210, 235);
-			this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
-			this.txtSupplier.Name = "txtSupplier";
-			this.txtSupplier.Size = new System.Drawing.Size(187, 20);
-			this.txtSupplier.TabIndex = 4;
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(207, 153);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(21, 13);
+			this.label2.TabIndex = 47;
+			this.label2.Text = "Rp";
+			// 
+			// cbSupplier
+			// 
+			this.cbSupplier.FormattingEnabled = true;
+			this.cbSupplier.Items.AddRange(new object[] {
+            "iBox"});
+			this.cbSupplier.Location = new System.Drawing.Point(210, 232);
+			this.cbSupplier.Name = "cbSupplier";
+			this.cbSupplier.Size = new System.Drawing.Size(187, 21);
+			this.cbSupplier.TabIndex = 48;
 			// 
 			// MasterBarang016
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(502, 478);
-			this.Controls.Add(this.txtSupplier);
+			this.Controls.Add(this.cbSupplier);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnClose);
 			this.Controls.Add(this.dt);
 			this.Controls.Add(this.btnSave);
@@ -196,7 +209,8 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtSupplier;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox cbSupplier;
 	}
 }
 

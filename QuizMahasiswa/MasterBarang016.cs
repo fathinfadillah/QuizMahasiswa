@@ -26,13 +26,13 @@ namespace QuizMahasiswa
 			string barang = txtNamaBarang.Text;
 			int harga = int.Parse(txtHarga.Text);
 			int stok = int.Parse(txtStok.Text);
-			string supplier = txtSupplier.Text;
+			string namasupplier = cbSupplier.Text;
 			var data = new tbl_barang
 			{
 				nama_barang = barang,
 				harga = harga,
 				stok = stok,
-				nama_supplier = supplier
+				nama_supplier = namasupplier
 			};
 			db.tbl_barangs.InsertOnSubmit(data);
 			db.SubmitChanges();
@@ -40,7 +40,7 @@ namespace QuizMahasiswa
 			txtNamaBarang.Clear();
 			txtHarga.Clear();
 			txtStok.Clear();
-			txtSupplier.Clear();
+			cbSupplier.SelectedIndex = -1;
 			LoadData();
 		}
 
