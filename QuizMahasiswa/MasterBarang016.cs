@@ -46,8 +46,7 @@ namespace QuizMahasiswa
 
 		void LoadData()
 		{
-			var st = from tb in db.tbl_barangs select tb;
-			dt.DataSource = st;
+			this.tbl_barangTableAdapter.Fill(this.quizMahasiswaDataSet.tbl_barang);
 		}
 
 		private void btnClose_Click(object sender, EventArgs e)
@@ -55,6 +54,13 @@ namespace QuizMahasiswa
 			this.Close();
 			MasterBarang016 a = new MasterBarang016();
 			a.Close();
+		}
+
+		private void MasterBarang016_Load(object sender, EventArgs e)
+		{
+			// TODO: This line of code loads data into the 'quizMahasiswaDataSet.tbl_barang' table. You can move, or remove it, as needed.
+			this.tbl_barangTableAdapter.Fill(this.quizMahasiswaDataSet.tbl_barang);
+
 		}
 	}
 }
