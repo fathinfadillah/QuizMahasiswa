@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuizMahasiswa" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-LHKUU3D;Initial Catalog=QuizMahasiswa;Integrated Security=True" SettingsObjectName="QuizMahasiswa.Properties.Settings" SettingsPropertyName="QuizMahasiswaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_barang" Member="tbl_barangs">
+    <Type Name="tbl_barang">
+      <Column Name="id_barang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nama_barang" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="harga" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="stok" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nama_supplier" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
