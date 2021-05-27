@@ -74,16 +74,16 @@ namespace QuizMahasiswa
 			worksheet.Name = "ProductDetail";
 
 			// storing header part in Excel 
-			for (int i = 1; i < dt.Columns.Count + 1; i++)
+			for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
 			{
-				worksheet.Cells[1, i] = dt.Columns[i - 1].HeaderText;
+				worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
 			}
 			// storing Each row and column value to excel sheet  
-			for (int i = 0; i < dt.Rows.Count; i++)
+			for (int i = 0; i < dataGridView1.Rows.Count; i++)
 			{
-				for (int j = 0; j < dt.Columns.Count; j++)
+				for (int j = 0; j < dataGridView1.Columns.Count; j++)
 				{
-					worksheet.Cells[i + 2, j + 1] = dt.Rows[i].Cells[j].Value.ToString();
+					worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
 				}
 			}
 
@@ -102,12 +102,12 @@ namespace QuizMahasiswa
 
 		private void btnPDF_Click(object sender, EventArgs e)
 		{
-			exportgridtopdf(dt, "test");
+			exportgridtopdf(dataGridView1, "test");
 		}
 
 		private void btnExcel_Click(object sender, EventArgs e)
 		{
-			exportgridtoexcel(dt, "test");
+			exportgridtoexcel(dataGridView1, "test");
 		}
 
 		private void ReportBarang014_Load(object sender, EventArgs e)
