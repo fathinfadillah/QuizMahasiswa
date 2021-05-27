@@ -94,7 +94,7 @@ namespace QuizMahasiswa
 				}
 			}
 			var saveFileDialogeExcel = new SaveFileDialog();
-			saveFileDialogeExcel.FileName = "output excel";
+			saveFileDialogeExcel.FileName = "Excel Report Barang";
 			saveFileDialogeExcel.DefaultExt = ".xlsx";
 
 			if (saveFileDialogeExcel.ShowDialog() == DialogResult.OK)
