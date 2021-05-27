@@ -15,10 +15,20 @@ namespace QuizMahasiswa
 {
     public partial class ReportBarang014 : Form
     {
-        public ReportBarang014()
-        {
-            InitializeComponent();
-        }
+		public ReportBarang014()
+		{
+			InitializeComponent();
+		}
+
+		private void btnPDF_Click(object sender, EventArgs e)
+		{
+			exportgridtopdf(dt, "Report Barang");
+		}
+
+		private void btnExcel_Click(object sender, EventArgs e)
+		{
+			exportgridtoexcel(dt, "Report Barang");
+		}
 
 		public void exportgridtopdf(DataGridView dgw, string filename)
 		{
@@ -30,7 +40,6 @@ namespace QuizMahasiswa
 			pdftable.DefaultCell.BorderWidth = 1;
 
 			iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
 			//Add header
 			foreach (DataGridViewColumn column in dgw.Columns)
 			{
@@ -71,47 +80,35 @@ namespace QuizMahasiswa
 			Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
 			worksheet = workbook.Sheets["Sheet1"];
 			worksheet = workbook.ActiveSheet;
-			worksheet.Name = "ProductDetail";
 
-			// storing header part in Excel 
-			for (int i = 1; i < dgw.Columns.Count + 1; i++)
+			for (int i = 1; i < dt.Columns.Count + 1; i++)
 			{
-				worksheet.Cells[1, i] = dgw.Columns[i - 1].HeaderText;
+				worksheet.Cells[1, i] = dt.Columns[i - 1].HeaderText;
 			}
-			// storing Each row and column value to excel sheet  
-			for (int i = 0; i < dgw.Rows.Count; i++)
+
+			for (int i = 0; i < dt.Rows.Count; i++)
 			{
-				for (int j = 0; j < dgw.Columns.Count; j++)
+				for (int j = 0; j < dt.Columns.Count; j++)
 				{
-					worksheet.Cells[i + 2, j + 1] = dgw.Rows[i].Cells[j].Value.ToString();
+					worksheet.Cells[i + 2, j + 1] = dt.Rows[i].Cells[j].Value.ToString();
 				}
 			}
-
-			//save excel
 			var saveFileDialogeExcel = new SaveFileDialog();
 			saveFileDialogeExcel.FileName = "output excel";
 			saveFileDialogeExcel.DefaultExt = ".xlsx";
 
 			if (saveFileDialogeExcel.ShowDialog() == DialogResult.OK)
 			{
-				workbook.SaveAs(saveFileDialogeExcel.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-					Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+				workbook.SaveAs(saveFileDialogeExcel.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
 			}
 			app.Quit();
 		}
 
-		private void btnPDF_Click(object sender, EventArgs e)
-		{
-			exportgridtopdf(dt, "Report Barang");
-		}
-
-		private void btnExcel_Click(object sender, EventArgs e)
-		{
-			exportgridtoexcel(dt, "Report Barang");
-		}
-
 		private void ReportBarang014_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'quizMahasiswaDataSet.tbl_barang' table. You can move, or remove it, as needed.
+			this.tbl_barangTableAdapter.Fill(this.quizMahasiswaDataSet.tbl_barang);
 			// TODO: This line of code loads data into the 'quizMahasiswaDataSet.tbl_barang' table. You can move, or remove it, as needed.
 			this.tbl_barangTableAdapter.Fill(this.quizMahasiswaDataSet.tbl_barang);
 

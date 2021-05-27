@@ -34,6 +34,7 @@
 			this.btnExcel = new System.Windows.Forms.Button();
 			this.btnPDF = new System.Windows.Forms.Button();
 			this.quizMahasiswaDataSet = new QuizMahasiswa.QuizMahasiswaDataSet();
+			this.quizMahasiswaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.tblbarangBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.tbl_barangTableAdapter = new QuizMahasiswa.QuizMahasiswaDataSetTableAdapters.tbl_barangTableAdapter();
 			this.idbarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +44,7 @@
 			this.namasupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dt)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSetBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tblbarangBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,6 +61,7 @@
 			// 
 			// dt
 			// 
+			this.dt.AllowUserToAddRows = false;
 			this.dt.AutoGenerateColumns = false;
 			this.dt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -102,10 +105,15 @@
 			this.quizMahasiswaDataSet.DataSetName = "QuizMahasiswaDataSet";
 			this.quizMahasiswaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
+			// quizMahasiswaDataSetBindingSource
+			// 
+			this.quizMahasiswaDataSetBindingSource.DataSource = this.quizMahasiswaDataSet;
+			this.quizMahasiswaDataSetBindingSource.Position = 0;
+			// 
 			// tblbarangBindingSource
 			// 
 			this.tblbarangBindingSource.DataMember = "tbl_barang";
-			this.tblbarangBindingSource.DataSource = this.quizMahasiswaDataSet;
+			this.tblbarangBindingSource.DataSource = this.quizMahasiswaDataSetBindingSource;
 			// 
 			// tbl_barangTableAdapter
 			// 
@@ -157,6 +165,7 @@
 			this.Load += new System.EventHandler(this.ReportBarang014_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dt)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.quizMahasiswaDataSetBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tblbarangBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -169,6 +178,7 @@
         private System.Windows.Forms.DataGridView dt;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnPDF;
+		private System.Windows.Forms.BindingSource quizMahasiswaDataSetBindingSource;
 		private QuizMahasiswaDataSet quizMahasiswaDataSet;
 		private System.Windows.Forms.BindingSource tblbarangBindingSource;
 		private QuizMahasiswaDataSetTableAdapters.tbl_barangTableAdapter tbl_barangTableAdapter;
