@@ -67,6 +67,12 @@
     <Compile Include="MasterBarang016.Designer.cs">
       <DependentUpon>MasterBarang016.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuizMahasiswaDataSet.Designer.cs">
@@ -82,6 +88,9 @@
     </Compile>
     <EmbeddedResource Include="MasterBarang016.resx">
       <DependentUpon>MasterBarang016.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
