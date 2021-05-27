@@ -102,12 +102,12 @@ namespace QuizMahasiswa
 
 		private void btnPDF_Click(object sender, EventArgs e)
 		{
-			exportgridtopdf(dt, "test");
+			exportgridtopdf(dt, "Report Barang");
 		}
 
 		private void btnExcel_Click(object sender, EventArgs e)
 		{
-			exportgridtoexcel(dt, "test");
+			exportgridtoexcel(dt, "Report Barang");
 		}
 
 		private void ReportBarang014_Load(object sender, EventArgs e)
